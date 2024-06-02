@@ -1,8 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  content: [
+    "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
+    "./node_modules/flowbite/**/*.js"
+  ],
   theme: {
     extend: {
+      fontFamily: {
+				hackgen: ["HackGen-Regular", "HackGen-Bold"] /* メインフォント */
+			},
       spacing: {
         header: "4rem",
       },
@@ -33,5 +39,8 @@ export default {
       },
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("flowbite/plugin")
+  ],
 };
