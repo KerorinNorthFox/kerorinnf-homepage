@@ -1,0 +1,30 @@
+---
+import Meta from "@/components/Meta/Meta.astro"
+import Links from "@/components/Meta/Links.astro"
+import Header from "@/components/Header/Header"
+import Footer from "@/components/Footer/Footer"
+
+interface Props {
+  title: string
+  description: string
+  keywords?: string[]
+}
+const { title, description, keywords=[] } = Astro.props
+---
+<!doctype html>
+<html lang="ja">
+  <head>
+    <Meta title={title} description={description} keywords={keywords} />
+    <slot name="additional-meta" />
+    <Links />
+    <slot name="additional-links" />
+  </head>
+  <body>
+    <Header />
+    <main class="min-h-screen m-0 p-0 pt-header bg-light-bg font-hackgen">
+      <slot />
+    </main>
+    <Footer />
+    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
+  </body>
+</html>
