@@ -1,5 +1,5 @@
-import NavDrawer from "@/components//Drawer/NavDrawer";
 import HeaderNavContent from "./HeaderNavContent"
+import NavDrawer from "./NavDrawer";
 
 const HeaderNav = () => {
   return(
