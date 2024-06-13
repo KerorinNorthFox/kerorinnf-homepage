@@ -11,7 +11,7 @@ const HeaderNav = () => {
       </div>
       <div className="h-full flex sm:hidden justify-center items-center">
         <button className="h-full w-header flex justify-center items-center hover:bg-hover" type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" data-drawer-placement="right" aria-controls="drawer-navigation">
-          <img className="size-8" src="/menu_icon.svg" alt="menu iconh"/>
+          <img className="size-8 filter invert" src="/menu_icon.svg" alt="menu icon"/>
         </button>
         <NavDrawer />
       </div>
