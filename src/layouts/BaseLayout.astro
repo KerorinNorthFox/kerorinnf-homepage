@@ -3,6 +3,7 @@ import Meta from "@/components/Meta/Meta.astro"
 import Links from "@/components/Meta/Links.astro"
 import Header from "@/components/Header/Header"
 import Footer from "@/components/Footer/Footer"
+import { SITE_TITLE } from "@/consts"
 
 interface Props {
   title: string
@@ -14,7 +15,7 @@ const { title, description, keywords=[] } = Astro.props
 <!doctype html>
 <html lang="ja">
   <head>
-    <Meta title={title} description={description} keywords={keywords} />
+    <Meta title={`${title} | ${SITE_TITLE}`} description={description} keywords={keywords} />
     <slot name="additional-meta" />
     <Links />
     <slot name="additional-links" />
