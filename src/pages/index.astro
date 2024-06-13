@@ -3,6 +3,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import FrontCover from '@/components/FrontCover';
 import { SITE_TITLE, SITE_DESCRIPTION } from '@/consts';
 import About from '@/components/About';
+import LayoutWidth from '@/layouts/LayoutWidth.astro';
 
 const keywords = ["KerorinNF", "kerorinnf", "blog", "osu"]
 ---
@@ -11,7 +12,9 @@ const keywords = ["KerorinNF", "kerorinnf", "blog", "osu"]
 		<FrontCover />
 		<!-- <img src="https://count.getloli.com/get/@kerorinnf?theme=rule34" alt="access counter" /> -->
 	</div>
-	<div class="bg-white">
-		<About />
-	</div>
+	<LayoutWidth>
+		<div class="bg-white">
+			<About />
+		</div>
+	</LayoutWidth>
 </BaseLayout>
