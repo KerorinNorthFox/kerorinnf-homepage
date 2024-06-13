@@ -1,0 +1,26 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PostHeadingTile from "@/components/PostHeading/PostHeadingTile";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("product")).sort();
+---
+
+<BaseLayout title='プロダクト一覧' description='プロダクトの紹介投稿一覧'>
+	<div class="max-w-[90%] mx-auto">
+		<div class="mx-8 mt-4 py-2">
+			<p class="text-xl font-bold text-gray-900">{posts.length}個のプロダクトが見つかりました。</p>
+		</div>
+		<section class="p-2">
+			<ul>
+				{
+					posts.map((post) => (
+						<li class="mb-4">
+							<PostHeadingTile category="product" post={post}/>
+						</li>
+					))
+				}
+			</ul>
+		</section>
+	</div>
+</BaseLayout>

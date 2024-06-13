@@ -1,0 +1,47 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PostHeadingTile from '@/components/PostHeading/PostHeadingTile';
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  const categorizedPosts = posts.filter(
+    (post) => post.slug.includes("/") && post.slug.split("/").length >= 2
+  );
+  return categorizedPosts.map((post) => {
+		const pathes = post.slug.split("/")
+		return { params: { category: pathes.slice(0, pathes.length - 1).join("/") } }
+	});
+}
+
+const { category } = Astro.params
+
+const posts = (await getCollection("blog", ({ id }) => {
+  return id.startsWith(category)
+})).sort(
+  (a, b) => a.data.publishedDate.valueOf() + b.data.publishedDate.valueOf()
+);
+const categoryName = category.split("/").at(-1);
+---
+
+<BaseLayout title=`${categoryName}の投稿一覧` description=`ブログのカテゴリ「${categoryName}」の投稿一覧`>
+	<div class="max-w-[90%] mx-auto">
+		<div class="mx-8 mt-4 py-2 ">
+      <p class="text-xl font-bold text-gray-900">
+        <span>{posts.length}個の記事が見つかりました。</span>
+        <span>カテゴリ名：{categoryName}</span>
+      </p>
+		</div>
+		<section class="p-2">
+			<ul>
+				{
+					posts.map((post) => (
+						<li class="mb-4">
+							<PostHeadingTile category="blog" post={post}/>
+						</li>
+					))
+				}
+			</ul>
+		</section>
+	</div>
+</BaseLayout>

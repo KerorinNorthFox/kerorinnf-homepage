@@ -1,0 +1,81 @@
+---
+title: 【TailwindCSS】書き方のテクニックメモ
+description: TailwindCSSを使う上でのテクニックをまとめています。
+publishedDate: 2024-06-05
+---
+
+import SentenceBlock from "@/components/PostParts/SentenceBlock.tsx";
+import Window from "@/components/PostParts/Window.tsx";
+
+## はじめに
+
+
+<SentenceBlock>
+## 画面のど真ん中に要素を配置する
+
+```html
+<div class="h-screen w-screen flex justify-center items-center">
+  <p>center</p>
+</div>
+```
+
+<Window>
+  <div class="w-full h-full flex justify-center items-center">
+    <p>center</p>
+  </div>
+</Window>
+
+|ユーティリティクラス名|説明|
+|:-|:-|
+|`h-screen`|画面の高さ100%|
+|`w-screen`|画面の幅100%|
+|`flex`|要素を横に配置する|
+|`justify-center`|要素を縦軸で真ん中に配置|
+|`items-center`|要素を縦軸で真ん中に配置|
+</SentenceBlock>
+
+
+<SentenceBlock>
+## 要素を均等に配置する
+
+```html
+<div class="flex justify-between">
+  <p>A</p>
+  <p>B</p>
+  <p>C</p>
+  <p>D</p>
+</div>
+```
+
+<Window>
+  <div class="flex justify-between">
+    <p>A</p>
+    <p>B</p>
+    <p>C</p>
+    <p>D</p>
+  </div>
+</Window>
+
+|ユーティリティクラス名|説明|
+|:-|:-|
+|`justify-between`|要素を均等に配置する|
+</SentenceBlock>
+
+
+<SentenceBlock>
+## はみ出たテキストの末尾を...で置き換える
+
+```html
+<p class="truncate">
+  looooooooooooooooooooooooooooooooooooooooooooooooooooooooooong sentence
+</p>
+```
+
+<Window>
+  <p class="truncate">looooooooooooooooooooooooooooooooooooooooooooooooooooooooooong sentence</p>
+</Window>
+
+|ユーティリティクラス|説明|
+|:-|:-|
+|`truncate`|はみ出たテキストを...で置き換える|
+</SentenceBlock>

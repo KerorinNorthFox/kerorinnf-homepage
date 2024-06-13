@@ -4,7 +4,7 @@ import FooterSiteInfo from "./FooterSiteInfo";
 const Footer = () => {
   return(
     <footer>
-      <div className="h-48 pt-8 bg-[#e5e7eb] text-gray-500">
+      <div className="h-56 pt-8 bg-[#e5e7eb] text-gray-500">
         <div className="mx-12 xl:mx-[20%] hidden md:flex justify-between">
           <FooterNav />
           <FooterSiteInfo />

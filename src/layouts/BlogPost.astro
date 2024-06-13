@@ -1,35 +1,30 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import FormattedDate from '@/components/FormattedDate.astro';
+import DateText from '@/components/Text/DateText';
 
 type Props = CollectionEntry<'blog'>['data'];
 
 const { title, description, publishedDate, updatedDate, headingImage } = Astro.props;
 ---
-
 <BaseLayout title={title} description={description}>
-	<div class="max-w-[90%] md:max-w-[60%] mx-auto">
-		<div class="block md:flex justify-center">
-			<article>
-				<div class="my-4 mr-4 flex justify-end text-sm font-thin text-right text-gray-500">
-					<span>投稿日：<FormattedDate date={publishedDate} /></span>
-					{
-						updatedDate && (
-							<span class="mx-2">/</span>
-							<span>最終更新日：<FormattedDate date={updatedDate} /></span>
-						)
-					}
+	<div class="max-w-screen lg:max-w-[70%] min-h-screen mx-auto py-12 px-12 sm:px-20 bg-white shadow-xl">
+		<article>
+			<div>
+				<div class="flex justify-end">
+					<DateText publishedDate={publishedDate} updatedDate={updatedDate} />
 				</div>
-				<h1 class="mb-4 px-4 text-2xl font-bold">{title}</h1>
-				<div class="mb-12 prose sm:prose-lg lg:prose-xl">
-						<div class="">
-								{headingImage && <img src={headingImage} alt="" class=" shadow-[0px_10px_30px_rgba(0,0,0,0.50)]" />}
-							<hr class="my-4" />
-						</div>
-						<slot/>
+				<div class="my-4 px-4">
+					<h1 class="text-2xl font-bold">{title}</h1>
 				</div>
-			</article>
-		</div>
+				<div class="w-full">
+					{headingImage && <img src={headingImage} alt="" class=" shadow-[0px_10px_30px_rgba(0,0,0,0.50)]" />}
+				</div>
+			</div>
+			<hr class="my-12" />
+			<div class="prose sm:prose-lg lg:prose-xl">
+				<slot />
+			</div>
+		</article>
 	</div>
 </BaseLayout>
