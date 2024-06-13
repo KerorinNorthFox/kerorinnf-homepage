@@ -4,12 +4,12 @@ import FooterSiteInfo from "./FooterSiteInfo";
 const Footer = () => {
   return(
     <footer>
-      <div className="h-56 pt-8 bg-[#e5e7eb] text-gray-500">
-        <div className="mx-12 xl:mx-[20%] hidden md:flex justify-between">
+      <div className="w-screen h-64 pt-12 bg-[#e5e7eb] text-gray-500">
+        <div className="max-w-[60%] mx-auto px-4 hidden lg:flex justify-between">
           <FooterNav />
           <FooterSiteInfo />
         </div>
-        <div className="flex md:hidden justify-center">
+        <div className="flex lg:hidden justify-center">
           <FooterSiteInfo />
         </div>
       </div>

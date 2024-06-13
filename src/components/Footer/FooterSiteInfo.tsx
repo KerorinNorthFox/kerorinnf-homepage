@@ -5,7 +5,7 @@ const FooterSiteInfo = () => {
   return(
     <div>
       &copy; {today.getFullYear()} KerorinNF. All rights reserved.
-      <div className="pt-4 md:pl-4 flex justify-center md:justify-start">
+      <div className="mt-4 lg:pl-4 flex justify-center lg:justify-start">
         <SocialMediaLinks />
       </div>
     </div>

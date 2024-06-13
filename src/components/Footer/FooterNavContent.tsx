@@ -8,7 +8,7 @@ const FooterNavContent = (props: FooterNavContentProps) => {
   
   return(
     <li className="px-4 py-2 hover:bg-hover">
-      <a className="text-lg" href={href}>{name}</a>
+      <a className="text-md" href={href}>{name}</a>
     </li>
   );
 }

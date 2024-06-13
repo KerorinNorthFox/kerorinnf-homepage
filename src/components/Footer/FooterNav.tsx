@@ -6,7 +6,7 @@ const FooterNav = () => {
       <ul>
         <FooterNavContent name="Home" href="/" />
       </ul>
-      <ul className="pl-2">
+      <ul className="ml-2">
         <FooterNavContent name="Product" href="/product" />
         <FooterNavContent name="Blog" href="/blog" />
       </ul>
