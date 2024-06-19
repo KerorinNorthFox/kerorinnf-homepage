@@ -7,6 +7,7 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://kerorinnf.vercel.app',
+  site: 'https://KerorinNorthFox.github.io',
+  base: "/kerorinnf-homepage",
   integrations: [mdx(), sitemap(), tailwind(), react()]
 });
