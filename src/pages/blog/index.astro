@@ -2,17 +2,18 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import PostHeadingTile from "@/components/PostHeading/PostHeadingTile";
+import LayoutWidth from '@/layouts/LayoutWidth.astro';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf()
 );
 ---
 <BaseLayout title='投稿一覧' description='ブログの投稿一覧'>
-	<div class="max-w-[90%] mx-auto">
+	<LayoutWidth>
 		<div class="mx-8 mt-4 py-2">
 			<p class="text-xl font-bold text-gray-900 ">{posts.length}個の記事が見つかりました。</p>
 		</div>
-		<section class="p-2">
+		<section class="p-4">
 			<ul>
 				{
 					posts.map((post) => (
@@ -23,5 +24,5 @@ const posts = (await getCollection('blog')).sort(
 				}
 			</ul>
 		</section>
-	</div>
+	</LayoutWidth>
 </BaseLayout>

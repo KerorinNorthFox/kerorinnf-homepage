@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import PostHeadingTile from '@/components/PostHeading/PostHeadingTile';
+import LayoutWidth from '@/layouts/LayoutWidth.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
@@ -25,14 +26,14 @@ const categoryName = category.split("/").at(-1);
 ---
 
 <BaseLayout title=`${categoryName}の投稿一覧` description=`ブログのカテゴリ「${categoryName}」の投稿一覧`>
-	<div class="max-w-[90%] mx-auto">
+	<LayoutWidth>
 		<div class="mx-8 mt-4 py-2 ">
       <p class="text-xl font-bold text-gray-900">
         <span>{posts.length}個の記事が見つかりました。</span>
         <span>カテゴリ名：{categoryName}</span>
       </p>
 		</div>
-		<section class="p-2">
+		<section class="p-4">
 			<ul>
 				{
 					posts.map((post) => (
@@ -43,5 +44,5 @@ const categoryName = category.split("/").at(-1);
 				}
 			</ul>
 		</section>
-	</div>
+	</LayoutWidth>
 </BaseLayout>

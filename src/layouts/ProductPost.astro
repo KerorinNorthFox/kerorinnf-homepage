@@ -1,30 +1,29 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import HeadingText from '@/components/Text/HeadingText';
+import LayoutWidth from './LayoutWidth.astro';
 
 type Props = CollectionEntry<"product">['data'];
 
 const { title, description, headingImage } = Astro.props;
 ---
 <BaseLayout title={title} description={description}>
-	<div class="max-w-[90%] md:max-w-[60%] mx-auto">
-		<article class="w-full pb-12">
-			<div>
-				<div class="mt-8 mb-4 px-4">
-					<HeadingText level={1} text={title} />
-					<!-- <h1 class="text-2xl font-bold">{title}</h1> -->
+	<LayoutWidth>
+		<div class="min-h-screen mx-auto py-12 px-12 sm:px-20 bg-white shadow-xl">
+			<article>
+				<div>
+					<div class="mt-8 mb-4 px-4">
+						<h1 class="text-2xl font-bold">{title}</h1>
+					</div>
+					<div class="w-full">
+						{headingImage && <img src={headingImage} alt="" class=" shadow-[0px_10px_30px_rgba(0,0,0,0.50)]" />}
+					</div>
 				</div>
-				<div class="w-full">
-					{headingImage && <img src={headingImage} alt="" class=" shadow-[0px_10px_30px_rgba(0,0,0,0.50)]" />}
-				</div>
-			</div>
-			<hr class="my-12" />
-			<div class="flex justify-center">
+				<hr class="my-12" />
 				<div class="prose sm:prose-lg lg:prose-xl">
 					<slot />
 				</div>
-			</div>
-		</article>
-	</div>
+			</article>
+		</div>
+	</LayoutWidth>
 </BaseLayout>
