@@ -1,15 +1,15 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import BaseLayout from '@/layouts/BaseLayout.astro';
-import LayoutWidth from './LayoutWidth.astro';
+import Layout from '@/layouts/Layout.astro';
+import LayoutWidth from '@/layouts/LayoutWidth.astro';
 
 type Props = CollectionEntry<"product">['data'];
 
 const { title, description, headingImage } = Astro.props;
 ---
-<BaseLayout title={title} description={description}>
+<Layout title={title} description={description}>
 	<LayoutWidth>
-		<div class="min-h-screen mx-auto py-12 px-12 sm:px-20 bg-white shadow-xl">
+		<div class="min-h-screen mx-auto py-12 px-12 sm:px-20 shadow-xl">
 			<article>
 				<div>
 					<div class="mt-8 mb-4 px-4">
@@ -20,10 +20,10 @@ const { title, description, headingImage } = Astro.props;
 					</div>
 				</div>
 				<hr class="my-12" />
-				<div class="prose sm:prose-lg lg:prose-xl">
+				<div class="prose dark:prose-invert sm:prose-lg lg:prose-xl">
 					<slot />
 				</div>
 			</article>
 		</div>
 	</LayoutWidth>
-</BaseLayout>
+</Layout>

@@ -7,7 +7,7 @@ const ExternalLink = (props: ExternalLinkProps) => {
   const { href, children } = props;
   
   return(
-    <a className="hover:text-black" href={href} target="_blank">
+    <a className="hover:text-black dark:hover:text-white" href={href} target="_blank">
       {children}
     </a>
   );

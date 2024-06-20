@@ -1,16 +1,16 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import BaseLayout from '@/layouts/BaseLayout.astro';
-import LayoutWidth from './LayoutWidth.astro';
+import Layout from '@/layouts/Layout.astro';
+import LayoutWidth from '@/layouts/LayoutWidth.astro';
 import DateText from '@/components/Text/DateText';
 
 type Props = CollectionEntry<'blog'>['data'];
 
 const { title, description, publishedDate, updatedDate, headingImage } = Astro.props;
 ---
-<BaseLayout title={title} description={description}>
+<Layout title={title} description={description}>
 	<LayoutWidth>
-		<div class="min-h-screen mx-auto py-12 px-12 sm:px-20 bg-white shadow-xl">
+		<div class="min-h-screen mx-auto py-12 px-12 sm:px-20 shadow-xl">
 			<article>
 				<div>
 					<div class="flex justify-end">
@@ -24,10 +24,10 @@ const { title, description, publishedDate, updatedDate, headingImage } = Astro.p
 					</div>
 				</div>
 				<hr class="my-12" />
-				<div class="prose sm:prose-lg lg:prose-xl">
+				<div class="prose dark:prose-invert sm:prose-lg lg:prose-xl ">
 					<slot />
 				</div>
 			</article>
 		</div>
 	</LayoutWidth>
-</BaseLayout>
+</Layout>

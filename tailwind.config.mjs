@@ -2,8 +2,8 @@
 export default {
   content: [
     "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
-    // "./node_modules/flowbite/**/*.js"
   ],
+  darkMode: "class",
   theme: {
     extend: {
       fontFamily: {
@@ -14,11 +14,26 @@ export default {
       },
       colors: {
         light: {
-          text: "#292929",
-          bg: "rgb(240,240,240)",
+          text: "#454545",
+          bg: "#ffffff",
+          footer: {
+            bg: "#f2f7fd",
+            text: "#6b7280"
+          },
         },
-        dark: {},
+        dark: {
+          text: "#F5F5F5",
+          bg: "#242629",
+          footer: {
+            bg: "#2E3035",
+            text: "#A0A0A0"
+          }
+        },
         hover: "rgba(100,100,100,0.2)",
+        accent: {
+          primary: "",
+          secondary: ""
+        },
         gradient: {
           from: "#ffdc5e",
           to: "#b0ffcc",

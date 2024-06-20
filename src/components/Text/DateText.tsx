@@ -8,7 +8,7 @@ interface DateTextProps {
 const DateText = (props: DateTextProps) => {
   const { publishedDate, updatedDate } = props
   return(
-    <p className="text-sm font-thin text-gray-500">
+    <p className="text-sm font-thin text-gray-500 dark:text-gray-300">
       {
         publishedDate && (
           <span>投稿日：<FormattedDate date={publishedDate} /></span>
