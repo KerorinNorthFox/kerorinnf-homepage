@@ -1,17 +1,26 @@
 import FooterNavContent from "./FooterNavContent";
 
 const FooterNav = () => {
-  return(
+  return (
     <div className="flex">
       <ul>
-        <FooterNavContent name="Home" href="/" />
+        <FooterNavContent
+          name="Home"
+          href="/"
+        />
       </ul>
       <ul className="ml-2">
-        <FooterNavContent name="Product" href="/product" />
-        <FooterNavContent name="Blog" href="/blog" />
+        <FooterNavContent
+          name="Product"
+          href="/product"
+        />
+        <FooterNavContent
+          name="Blog"
+          href="/blog"
+        />
       </ul>
     </div>
   );
-}
+};
 
 export default FooterNav;

@@ -1,20 +1,20 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro';
-import FrontCover from '@/components/FrontCover';
-import { SITE_TITLE, SITE_DESCRIPTION } from '@/consts';
-import About from '@/components/About';
+import Layout from '@/layouts/Layout.astro';
 import LayoutWidth from '@/layouts/LayoutWidth.astro';
+import FrontCover from '@/components/FrontCover';
+import About from '@/components/About';
+import { SITE_DESCRIPTION } from '@/consts';
 
-const keywords = ["KerorinNF", "kerorinnf", "blog", "osu"]
+const keywords = ["KerorinNF", "kerorinnf", "blog"]
 ---
-<BaseLayout title="Homepage" description={SITE_DESCRIPTION} keywords={keywords}>
+<Layout title="Homepage" description={SITE_DESCRIPTION} keywords={keywords}>
 	<div class="h-[calc(100vh_-_4rem)]">
 		<FrontCover />
 		<!-- <img src="https://count.getloli.com/get/@kerorinnf?theme=rule34" alt="access counter" /> -->
 	</div>
 	<LayoutWidth>
-		<div class="bg-white">
-			<About />
+		<div class="">
+			<!-- <About /> -->
 		</div>
 	</LayoutWidth>
-</BaseLayout>
+</Layout>

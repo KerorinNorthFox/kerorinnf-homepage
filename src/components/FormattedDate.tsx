@@ -1,16 +1,10 @@
 interface FormattedDateProps {
-	date: Date
+  date: Date;
 }
 
 const FormattedDate = (props: FormattedDateProps) => {
-	const { date } = props;
-	return(
-		<time dateTime={date.toISOString()}>
-			{
-				date.toLocaleDateString('ja-JP')
-			}
-		</time>
-	);
-}
+  const { date } = props;
+  return <time dateTime={date.toISOString()}>{date.toLocaleDateString("ja-JP")}</time>;
+};
 
 export default FormattedDate;

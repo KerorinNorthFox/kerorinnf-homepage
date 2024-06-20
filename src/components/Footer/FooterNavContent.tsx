@@ -1,16 +1,20 @@
 interface FooterNavContentProps {
-  name: string
-  href: string
+  name: string;
+  href: string;
 }
 
 const FooterNavContent = (props: FooterNavContentProps) => {
   const { name, href } = props;
-  
-  return(
+
+  return (
     <li className="px-4 py-2 hover:bg-hover">
-      <a className="text-md" href={href}>{name}</a>
+      <a
+        className="text-md"
+        href={href}>
+        {name}
+      </a>
     </li>
   );
-}
+};
 
 export default FooterNavContent;

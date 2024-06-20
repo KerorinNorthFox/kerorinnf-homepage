@@ -2,19 +2,19 @@ import FooterNav from "./FooterNav";
 import FooterSiteInfo from "./FooterSiteInfo";
 
 const Footer = () => {
-  return(
+  return (
     <footer>
-      <div className="h-64 pt-12 bg-light-footer-bg dark:bg-dark-footer-bg text-light-footer-text dark:text-dark-footer-text">
-        <div className="max-w-[70%] mx-auto px-4 hidden lg:flex justify-between">
+      <div className="h-64 bg-light-footer-bg pt-12 text-light-footer-text dark:bg-dark-footer-bg dark:text-dark-footer-text">
+        <div className="mx-auto hidden max-w-[70%] justify-between px-4 lg:flex">
           <FooterNav />
           <FooterSiteInfo />
         </div>
-        <div className="flex lg:hidden justify-center">
+        <div className="flex justify-center lg:hidden">
           <FooterSiteInfo />
         </div>
       </div>
     </footer>
   );
-}
+};
 
 export default Footer;
