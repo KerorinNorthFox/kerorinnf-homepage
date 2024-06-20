@@ -54,6 +54,9 @@ export default {
         "footer-gradient":
           "linear-gradient(to top, rgba(12,35,61,0.5), rgba(12,35,61,0.4), rgba(12,35,61,0.3), rgba(12,35,61,0.05))",
       },
+      transitionDuration: {
+        bg: "500ms",
+      },
     },
   },
   plugins: [require("@tailwindcss/typography"), require("flowbite/plugin")],

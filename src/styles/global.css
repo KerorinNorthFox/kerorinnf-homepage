@@ -9,13 +9,13 @@
 @tailwind utilities;
 
 @font-face {
-	font-family: "hackgen-regular";
-	src: url("/fonts/hackgen/HackGen-Regular.ttf");
+  font-family: "hackgen-regular";
+  src: url("/fonts/hackgen/HackGen-Regular.ttf");
 }
 
 @font-face {
-	font-family: "hackgen-bold";
-	src: url("/fonts/hackgen/HackGen-Bold.ttf");
+  font-family: "hackgen-bold";
+  src: url("/fonts/hackgen/HackGen-Bold.ttf");
 }
 
 /* :root {
