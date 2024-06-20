@@ -9,7 +9,7 @@ const PostHeadingTile = (props: PostsHeadingTileProps) => {
   const { post, category } = props;
 
   return(
-    <div className="rounded-lg bg-white hover:shadow-lg">
+    <div className="rounded-lg border border-gray-300 hover:shadow-lg">
       <a href={`/${category}/${post.slug}/`}>
         <div className="w-full h-36 flex items-center">
           <div className="hidden sm:block h-full">
