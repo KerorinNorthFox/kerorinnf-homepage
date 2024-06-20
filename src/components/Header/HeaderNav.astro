@@ -3,20 +3,19 @@ import HeaderNavContent from "./HeaderNavContent"
 import NavDrawer from "./NavDrawer"
 import ThemeToggle from "@/components/ThemeToggle.astro";
 ---
-<div class="h-full hidden sm:flex">
-  <HeaderNavContent name="Home" href="/" />
-  <HeaderNavContent name="Product" href="/product" />
-  <HeaderNavContent name="Blog" href="/blog" />
-  <div class="size-18 ml-2 p-4">
+<div class="h-full flex justify-center items-center">
+  <div class="size-18 p-4">
     <ThemeToggle />
   </div>
-</div>
-<div class="h-full flex sm:hidden justify-center items-center">
-  <div class="mr-2">
-    <ThemeToggle />
+  <div class="h-full hidden sm:flex">
+    <HeaderNavContent name="Home" href="/" />
+    <HeaderNavContent name="Product" href="/product" />
+    <HeaderNavContent name="Blog" href="/blog" />
   </div>
-  <button class="h-full w-header flex justify-center items-center hover:bg-hover" type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" data-drawer-placement="right" aria-controls="drawer-navigation">
-    <img class="size-8 filter invert dark:invert-0" src="/menu_icon.svg" alt="menu icon"/>
-  </button>
-  <NavDrawer />
+  <div class="h-full flex sm:hidden justify-center items-center">
+    <button class="h-full w-header flex justify-center items-center hover:bg-hover" type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" data-drawer-placement="right" aria-controls="drawer-navigation">
+      <img class="size-8 filter invert dark:invert-0" src="/menu_icon.svg" alt="menu icon"/>
+    </button>
+    <NavDrawer />
+  </div>
 </div>
