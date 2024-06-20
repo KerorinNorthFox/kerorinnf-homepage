@@ -22,8 +22,8 @@ const PostHeadingTile = (props: PostsHeadingTileProps) => {
               <div className="w-48"></div>
             )}
           </div>
-          <div className="truncate text-wrap p-4">
-            <p className="text-lg font-bold">{post.data.title}</p>
+          <div className="w-full text-wrap p-4 sm:w-[calc(100%_-_12rem)]">
+            <p className="truncate text-lg font-bold">{post.data.title}</p>
             <p className="mt-2">
               <DateText
                 publishedDate={post.data.publishedDate}

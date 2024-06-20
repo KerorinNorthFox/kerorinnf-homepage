@@ -1,14 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
-  ],
+  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   darkMode: "class",
   theme: {
     extend: {
       fontFamily: {
-				hackgen: ["HackGen-Regular", "HackGen-Bold"] /* メインフォント */
-			},
+        hackgen: ["HackGen-Regular", "HackGen-Bold"] /* メインフォント */,
+      },
       spacing: {
         header: "4rem",
       },
@@ -18,7 +16,7 @@ export default {
           bg: "#ffffff",
           footer: {
             bg: "#f2f7fd",
-            text: "#6b7280"
+            text: "#6b7280",
           },
         },
         dark: {
@@ -26,13 +24,13 @@ export default {
           bg: "#242629",
           footer: {
             bg: "#2E3035",
-            text: "#A0A0A0"
-          }
+            text: "#A0A0A0",
+          },
         },
         hover: "rgba(100,100,100,0.2)",
         accent: {
           primary: "",
-          secondary: ""
+          secondary: "",
         },
         gradient: {
           from: "#ffdc5e",
@@ -52,10 +50,11 @@ export default {
           "100%": { "background-position": "0% 50%" },
         },
       },
+      backgroundImage: {
+        "footer-gradient":
+          "linear-gradient(to top, rgba(12,35,61,0.5), rgba(12,35,61,0.4), rgba(12,35,61,0.3), rgba(12,35,61,0.05))",
+      },
     },
   },
-  plugins: [
-    require("@tailwindcss/typography"),
-    require("flowbite/plugin")
-  ],
+  plugins: [require("@tailwindcss/typography"), require("flowbite/plugin")],
 };
