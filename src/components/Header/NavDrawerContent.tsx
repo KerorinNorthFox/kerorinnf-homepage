@@ -7,7 +7,7 @@ const NavDrawerContent = (props: NavDrawerContentProps) => {
 
   return (
     <li>
-      <div className="flex items-center p-4 hover:bg-hover">{children}</div>
+      <div className="flex items-center hover:bg-hover">{children}</div>
     </li>
   );
 };

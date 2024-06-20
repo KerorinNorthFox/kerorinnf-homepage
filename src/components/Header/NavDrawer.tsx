@@ -39,21 +39,21 @@ const NavDrawer = () => {
           <NavDrawerContent>
             <a
               href="/"
-              className="h-full w-full">
+              className="w-full p-4">
               Home
             </a>
           </NavDrawerContent>
           <NavDrawerContent>
             <a
               href="/product"
-              className="h-full w-full">
+              className="w-full p-4">
               Product
             </a>
           </NavDrawerContent>
           <NavDrawerContent>
             <a
               href="/blog"
-              className="h-full w-full">
+              className="w-full p-4">
               Blog
             </a>
           </NavDrawerContent>
