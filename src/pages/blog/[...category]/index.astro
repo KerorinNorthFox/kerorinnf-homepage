@@ -26,13 +26,13 @@ const categoryName = category.split("/").at(-1);
 ---
 <Layout title=`${categoryName}の投稿一覧` description=`ブログのカテゴリ「${categoryName}」の投稿一覧`>
 	<LayoutWidth>
-		<div class="mx-8 mt-4 py-2 ">
+		<div class="mx-6 mt-4">
       <p class="text-xl font-bold text-light-text dark:text-dark-text">
         <span>{posts.length}個の記事が見つかりました。</span>
         <span>カテゴリ名：{categoryName}</span>
       </p>
 		</div>
-		<section class="px-4 pb-4">
+		<section class="p-4">
 			<ul class="space-y-4">
 				{
 					posts.map((post) => (
