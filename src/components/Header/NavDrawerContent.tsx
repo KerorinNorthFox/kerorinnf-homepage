@@ -1,16 +1,13 @@
 interface NavDrawerContentProps {
-  name: string
-  href: string
+  children: React.ReactElement
 }
 
 const NavDrawerContent = (props: NavDrawerContentProps) => {
-  const { name, href } = props;
+  const { children } = props;
 
   return(
     <li>
-      <a href={href} className="flex p-4 items-center hover:bg-hover">
-          <span className="text-light-text">{name}</span>
-      </a>
+      <div className="flex p-4 items-center hover:bg-hover">{children}</div>
     </li>
   );
 }
