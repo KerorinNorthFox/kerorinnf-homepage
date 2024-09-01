@@ -1,4 +1,4 @@
-import FormattedDate from "../FormattedDate";
+import FormattedDate from "@/components/FormattedDate";
 
 interface DateTextProps {
   publishedDate?: Date;

@@ -8,10 +8,8 @@ const posts = (await getCollection("product")).sort();
 ---
 <Layout title='プロダクト一覧' description='プロダクトの紹介投稿一覧'>
 	<LayoutWidth>
-		<div class="mx-6 mt-4">
-			<p class="text-xl font-bold text-light-text dark:text-dark-text">{posts.length}個のプロダクトが見つかりました。</p>
-		</div>
-		<section class="p-4">
+		<p class="m-6 text-xl font-bold text-light-text dark:text-dark-text">{posts.length}個のプロダクトが見つかりました。</p>
+		<section class="px-4 pb-8">
 			<ul class="space-y-4">
 				{
 					posts.map((post) => (

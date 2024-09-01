@@ -9,6 +9,8 @@ const PostHeadingTile = (props: PostsHeadingTileProps) => {
   const { post, category } = props;
 
   return (
+    // <div className="rounded-lg border border-gray-300 bg-opacity-10 bg-[url('blog-placeholder-1.jpg')] bg-contain bg-right bg-no-repeat hover:shadow-lg sm:bg-none">
+    // <div className="rounded-lg border border-gray-300 bg-opacity-10 bg-[url('blog-placeholder-1.jpg')] bg-cover hover:shadow-lg sm:bg-none">
     <div className="rounded-lg border border-gray-300 hover:shadow-lg">
       <a href={`/${category}/${post.slug}/`}>
         <div className="flex h-36 w-full items-center">
