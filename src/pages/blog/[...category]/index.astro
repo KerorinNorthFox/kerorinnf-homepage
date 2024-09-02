@@ -15,7 +15,7 @@ export async function getStaticPaths() {
 	});
 }
 
-const { category } = Astro.params
+const { category } = Astro.params;
 
 const posts = (await getCollection("blog", ({ id }) => {
   return id.startsWith(category)
@@ -30,7 +30,7 @@ const categoryName = category.split("/").at(-1);
 			<span>{posts.length}個の記事が見つかりました。</span>
 			<span>カテゴリ名：{categoryName}</span>
 		</p>
-		<section class="px-4 mb-8">
+		<section class="px-4 pb-8">
 			<ul class="space-y-4">
 				{
 					posts.map((post) => (

@@ -2,15 +2,15 @@
 title: 【TailwindCSS】書き方のテクニックメモ
 description: TailwindCSSを使う上でのテクニックをまとめています。
 publishedDate: 2024-06-05
+tag: ["Programming", "Web開発", "Tailwind CSS"]
 ---
 
 import SentenceBlock from "@/components/ArticleParts/SentenceBlock";
 import Window from "@/components/ArticleParts/Window";
 
 ## はじめに
+このブログを制作する中で遭遇した記述パターンの備忘録です。
 
-
-<SentenceBlock>
 ## 画面のど真ん中に要素を配置する
 
 ```html
@@ -32,10 +32,7 @@ import Window from "@/components/ArticleParts/Window";
 |`flex`|要素を横に配置する|
 |`justify-center`|要素を縦軸で真ん中に配置|
 |`items-center`|要素を縦軸で真ん中に配置|
-</SentenceBlock>
 
-
-<SentenceBlock>
 ## 要素を均等に配置する
 
 ```html
@@ -59,10 +56,7 @@ import Window from "@/components/ArticleParts/Window";
 |ユーティリティクラス名|説明|
 |:-|:-|
 |`justify-between`|要素を均等に配置する|
-</SentenceBlock>
 
-
-<SentenceBlock>
 ## はみ出たテキストの末尾を...で置き換える
 
 ```html
@@ -78,4 +72,11 @@ import Window from "@/components/ArticleParts/Window";
 |ユーティリティクラス|説明|
 |:-|:-|
 |`truncate`|はみ出たテキストを...で置き換える|
-</SentenceBlock>
+
+## svgの色を変える
+
+svgタグのfill属性とstroke属性に"currentColor"を指定することで、Tailwind CSSの`text-color`で色を変えることができる。
+
+```html
+<svg fill="currentColor" stroke="currentColor">...</svg>
+```
