@@ -3,26 +3,34 @@ import { getCollection } from 'astro:content';
 import Layout from '@/layouts/Layout.astro';
 import LayoutWidth from '@/layouts/LayoutWidth.astro';
 import PostHeadingTile from "@/components/PostHeadingTile";
+import SideMenu from '@/components/SideMenu';
 
-const posts = (await getCollection('blog')).sort(
+const tag = Astro.url.searchParams.get("tag");
+const name = Astro.url.searchParams.toString();
+console.log("name is " + name)
+
+const posts = (await getCollection('blog')).filter((post) => tag ? post.data.tag?.includes(tag) : post).sort(
 	(a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf()
 );
 ---
 <Layout title='投稿一覧' description='ブログの投稿一覧'>
 	<LayoutWidth>
-		<div class="mx-6 mt-4">
-			<p class="text-xl font-bold text-light-text dark:text-dark-text">{posts.length}個の記事が見つかりました。</p>
+		<!-- <div class="hidden xl:flex absolute right-0">
+			<SideMenu />
+		</div> -->
+		<div class="p-4">
+			<p class="text-xl font-bold">{posts.length}個の記事が見つかりました。</p>
+			<section class="mt-4">
+				<ul class="space-y-4">
+					{
+						posts.map((post) => (
+							<li>
+								<PostHeadingTile category="blog" post={post}/>
+							</li>
+						))
+					}
+				</ul>
+			</section>
 		</div>
-		<section class="p-4">
-			<ul class="space-y-4">
-				{
-					posts.map((post) => (
-						<li>
-							<PostHeadingTile category="blog" post={post}/>
-						</li>
-					))
-				}
-			</ul>
-		</section>
 	</LayoutWidth>
 </Layout>

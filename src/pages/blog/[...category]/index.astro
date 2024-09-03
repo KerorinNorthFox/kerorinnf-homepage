@@ -26,20 +26,22 @@ const categoryName = category.split("/").at(-1);
 ---
 <Layout title=`${categoryName}の投稿一覧` description=`ブログのカテゴリ「${categoryName}」の投稿一覧`>
 	<LayoutWidth>
-		<p class="m-6 text-xl font-bold text-light-text dark:text-dark-text">
-			<span>{posts.length}個の記事が見つかりました。</span>
-			<span>カテゴリ名：{categoryName}</span>
-		</p>
-		<section class="px-4 pb-8">
-			<ul class="space-y-4">
-				{
-					posts.map((post) => (
-						<li>
-							<PostHeadingTile category="blog" post={post}/>
-						</li>
-					))
-				}
-			</ul>
-		</section>
+		<div class="p-4">
+			<p class="text-xl font-bold">
+				<span>{posts.length}個の記事が見つかりました。</span>
+				<span>カテゴリ名：{categoryName}</span>
+			</p>
+			<section class="mt-4">
+				<ul class="space-y-4">
+					{
+						posts.map((post) => (
+							<li>
+								<PostHeadingTile category="blog" post={post}/>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+		</div>
 	</LayoutWidth>
 </Layout>

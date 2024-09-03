@@ -3,7 +3,7 @@ import ExternalLink from "@/components/ExternalLink";
 const SocialMediaLinks = () => {
   return (
     <div className="flex gap-4">
-      <ExternalLink href="https://twitter.com/KerorinNorthFox">
+      <ExternalLink href="https://twitter.com/KerorinNF222">
         <svg
           viewBox="0 0 16 16"
           aria-hidden="true"
