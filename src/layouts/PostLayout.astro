@@ -1,17 +1,22 @@
 ---
-import type { CollectionEntry } from 'astro:content';
 import Layout from '@/layouts/Layout.astro';
 import LayoutWidth from '@/layouts/LayoutWidth.astro';
 
-type Props = CollectionEntry<"product">['data'];
+type Props = {
+  title: string
+  description: string
+  tag: string[] | undefined
+  headingImage: string | undefined
+}
 
-const { title, description, headingImage, tag } = Astro.props;
+const { title, description, tag, headingImage } = Astro.props;
 ---
 <Layout title={title} description={description}>
 	<LayoutWidth>
 		<div class="min-h-screen mx-auto py-12 px-12 sm:px-20 shadow-xl">
 			<article>
-				<h1 class="mt-8 mb-4 text-2xl font-bold">{title}</h1>
+        <slot name="date_slot" />
+				<h1 class="my-4 text-2xl font-bold">{title}</h1>
 				{
 					tag && (
 						<div class="flex space-x-2 m-2">
@@ -28,7 +33,7 @@ const { title, description, headingImage, tag } = Astro.props;
 					{headingImage && <img src={headingImage} alt="" class=" shadow-[0px_10px_30px_rgba(0,0,0,0.50)]" />}
 				</div>
 				<hr class="my-12" />
-				<div class="prose dark:prose-invert sm:prose-lg lg:prose-xl">
+				<div class="prose dark:prose-invert sm:prose-lg lg:prose-xl ">
 					<slot />
 				</div>
 			</article>

@@ -1,6 +1,6 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content';
-import ProductPost from '@/layouts/ProductPost.astro';
+import PostLayout from '@/layouts/PostLayout.astro';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('product');
@@ -13,8 +13,9 @@ type Props = CollectionEntry<'product'>;
 
 const post = Astro.props;
 const { Content } = await post.render();
----
 
-<ProductPost {...post.data}>
+const { title, description, headingImage, tag } = post.data;
+---
+<PostLayout title={title}, description={description}, headingImage={headingImage}, tag={tag}>
 	<Content />
-</ProductPost>
+</PostLayout>
