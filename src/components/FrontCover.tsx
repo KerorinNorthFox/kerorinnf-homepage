@@ -5,7 +5,7 @@ const FrontCover = () => {
         <h1 className="text-4xl">けろりん北狐のホームページ</h1>
         <p className="mt-4 text-lg">何も書くことがねぇ</p>
         <img
-          src="https://count.getloli.com/get/@kerorinnf?theme=rule34"
+          src="https://count.getloli.com/get/@kerorinnf?theme=gelbooru"
           width={315}
           height={100}
           alt="access counter"
