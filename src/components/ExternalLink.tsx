@@ -1,16 +1,18 @@
 interface ExternalLinkProps {
   href: string;
+  ariaLabel: string;
   children: React.ReactElement;
 }
 
 const ExternalLink = (props: ExternalLinkProps) => {
-  const { href, children } = props;
+  const { href, ariaLabel, children } = props;
 
   return (
     <a
       className="hover:text-black dark:hover:text-white"
       href={href}
-      target="_blank">
+      target="_blank"
+      aria-label={ariaLabel}>
       {children}
     </a>
   );
