@@ -4,27 +4,24 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
-      fontFamily: {
-        hackgen: ["HackGen-Regular", "HackGen-Bold"] /* メインフォント */,
-      },
       spacing: {
-        header: "4rem",
+        "header-space": "4rem",
       },
       colors: {
         light: {
           text: "#454545",
           bg: "#ffffff",
           footer: {
-            bg: "#f2f7fd",
             text: "#6b7280",
+            bg: "#f2f7fd",
           },
         },
         dark: {
           text: "#F5F5F5",
           bg: "#242629",
           footer: {
-            bg: "#2E3035",
             text: "#A0A0A0",
+            bg: "#2E3035",
           },
         },
         hover: "rgba(100,100,100,0.2)",
@@ -55,7 +52,7 @@ export default {
           "linear-gradient(to top, rgba(12,35,61,0.5), rgba(12,35,61,0.4), rgba(12,35,61,0.3), rgba(12,35,61,0.05))",
       },
       transitionDuration: {
-        bg: "500ms",
+        "bg-change": "500ms",
       },
     },
   },

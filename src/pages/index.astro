@@ -1,8 +1,6 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import LayoutWidth from '@/layouts/LayoutWidth.astro';
 import FrontCover from '@/components/FrontCover';
-import About from '@/components/About';
 import { SITE_DESCRIPTION } from '@/consts';
 
 const keywords = ["KerorinNF", "kerorinnf", "blog"]
@@ -11,9 +9,4 @@ const keywords = ["KerorinNF", "kerorinnf", "blog"]
 	<div class="h-[calc(100vh_-_4rem)]">
 		<FrontCover />
 	</div>
-	<LayoutWidth>
-		<div class="">
-			<!-- <About /> -->
-		</div>
-	</LayoutWidth>
 </Layout>
