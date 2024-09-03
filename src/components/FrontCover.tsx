@@ -13,8 +13,8 @@ const FrontCover = () => {
         />
         <p className="text-xs text-gray-500">ケモ耳可愛い</p>
       </div>
-      <div className="hidden w-[50%] md:flex">
-        <div className="m-auto border border-light-text text-center dark:border-dark-text">
+      <div className="hidden w-[50%] items-center justify-center md:flex">
+        <div className="border border-light-text text-center dark:border-dark-text">
           <p className="p-12">自己紹介エリア</p>
         </div>
       </div>
