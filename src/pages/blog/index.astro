@@ -4,14 +4,13 @@ import Layout from '@/layouts/Layout.astro';
 import LayoutWidth from '@/layouts/LayoutWidth.astro';
 import PostHeadingTile from "@/components/PostHeadingTile";
 // import SideMenu from '@/components/SideMenu';
+export const prerender =  false
 
 const tag = Astro.url.searchParams.get("tag");
-const name = Astro.url.searchParams.toString();
-console.log("name is " + name)
 
-const posts = (await getCollection('blog')).filter((post) => tag ? post.data.tag?.includes(tag) : post).sort(
-	(a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf()
-);
+const posts = (await getCollection('blog'))
+	.filter((post) => tag ? post.data.tag?.includes(tag) : true)
+	.sort((a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf());
 ---
 <Layout title='投稿一覧' description='ブログの投稿一覧'>
 	<LayoutWidth>
