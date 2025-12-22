@@ -1,0 +1,16 @@
+---
+import FooterNav from "./FooterNav";
+import FooterSiteInfo from "./FooterSiteInfo.astro";
+
+---
+<footer>
+  <div class="h-64 pt-12 bg-footer-bg-color text-footer-text-color transition-colors duration-500">
+    <div class="px-4 mx-auto hidden lg:flex max-w-[70%] justify-between">
+      <FooterNav />
+      <FooterSiteInfo />
+    </div>
+    <div class="flex lg:hidden justify-center">
+      <FooterSiteInfo />
+    </div>
+  </div>
+</footer>

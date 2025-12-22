@@ -1,0 +1,13 @@
+---
+// 外部リンクを別タブで開くリンク化コンポーネント
+
+interface Props {
+  href: string
+  ariaLabel: string;
+}
+
+const { href, ariaLabel } = Astro.props;
+---
+<a class="hover:test-black dark:text-white" target="_blank" href={href} aria-label={ariaLabel}>
+  <slot/>
+</a>

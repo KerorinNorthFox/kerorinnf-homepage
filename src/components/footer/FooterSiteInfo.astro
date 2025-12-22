@@ -1,0 +1,13 @@
+---
+// 著作権表示と、ソーシャルメディアへのリンク集
+
+import SocialLinks from "./SocialLinks.astro";
+
+const today = new Date();
+---
+<div>
+  &copy; {today.getFullYear()} KerorinNF. All rights reserved.
+  <div class="mt-4 lg:pl-4 flex justify-center lg:justify-start">
+    <SocialLinks />
+  </div>
+</div>
