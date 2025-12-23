@@ -1,0 +1,42 @@
+---
+import HeaderNavContent from "./HeaderNavContent.astro";
+import NavDrawer from "./NavDrawer.astro";
+import ThemeToggle from "@/components/ThemeToggle.astro";
+import menu_icon from "@/assets/menu_icon.svg";
+---
+<div class="flex h-full items-center justify-center">
+  <div class="p-4">
+    <ThemeToggle />
+  </div>
+  <div class="hidden h-full sm:flex">
+    <HeaderNavContent
+      name="Home"
+      href="/"
+    />
+    <HeaderNavContent
+      name="Product"
+      href="/product"
+    />
+    <HeaderNavContent
+      name="Blog"
+      href="/blog"
+    />
+  </div>
+  <div class="flex h-full items-center justify-center sm:hidden">
+    <button
+      class="hover:bg-hover flex items-center justify-center p-4"
+      type="button"
+      data-drawer-target="drawer-navigation"
+      data-drawer-show="drawer-navigation"
+      data-drawer-placement="right"
+      data-drawer-backdrop="false"
+      aria-controls="drawer-navigation">
+      <img
+        class="size-8 invert filter dark:invert-0"
+        src={menu_icon.src}
+        alt="menu icon"
+      />
+    </button>
+    <NavDrawer />
+  </div>
+</div>
