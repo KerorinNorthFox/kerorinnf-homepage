@@ -4,10 +4,10 @@ import { SOCIAL_LINKS } from "@/libs/consts"
 ---
 <div class="flex gap-4">
   {
-    SOCIAL_LINKS.map(({href, ariaLabel, icon}) => {
+    SOCIAL_LINKS.map(({href, ariaLabel, icon}) => (
       <ExternalLink href={href} ariaLabel={ariaLabel}>
-        <img src={icon.src.src} alt={icon.name} />
+        <icon.src class="text-footer-text-color" />
       </ExternalLink>
-    })
+    ))
   }
 </div>
