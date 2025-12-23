@@ -1,12 +1,12 @@
 ---
-import "../styles/global.css";
-import Welcome from "../components/Welcome.astro";
-import Layout from "../layouts/Layout.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { SITE_DESCRIPTION } from "@/libs/consts";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const keywords = ["KerorinNF", "kerorinnf", "KerorinNorthFox", "blog", "けろりん", "けろりん北狐"];
 ---
 
-<Layout>
-  <Welcome />
-</Layout>
+<BaseLayout title="ホームページ" description={SITE_DESCRIPTION} keywords={keywords}>
+	<div class="h-[calc(100vh_-_4rem)]">
+		<p class="text-text-demo">Hello world</p>
+	</div>
+</BaseLayout>
