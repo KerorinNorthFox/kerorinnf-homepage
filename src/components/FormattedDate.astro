@@ -1,0 +1,9 @@
+---
+interface Props {
+  date: string | Date;
+}
+
+const { date } = Astro.props;
+const d = typeof date === "string" ? new Date(date) : date;
+---
+<time datetime={d.toISOString()}>{d.toLocaleDateString("ja-JP")}</time>

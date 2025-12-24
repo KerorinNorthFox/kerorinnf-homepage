@@ -1,0 +1,19 @@
+---
+import FormattedDate from './FormattedDate.astro';
+
+interface Props {
+  publishedDate: Date;
+  updatedDate?: Date;
+}
+
+const { publishedDate, updatedDate } = Astro.props;
+---
+<span class="text-sm font-thin text-gray-600 dark:text-gray-300">
+  <span>投稿日：<FormattedDate date={publishedDate} /></span>
+  {
+    updatedDate && (
+      <span class="mx-1">/</span>
+      <span>更新日：<FormattedDate date={updatedDate} /></span>
+    )
+  }
+</span>

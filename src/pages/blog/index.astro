@@ -1,0 +1,28 @@
+---
+import PostHeadingTile from "@/components/PostHeadingTile.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import ResponsiveWidth from "@/layouts/ResponsiveWidth.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog"))
+  .sort((a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf());
+---
+
+<BaseLayout title="投稿一覧" description="ブログの投稿一覧">
+  <ResponsiveWidth>
+    <div class="p-8 min-h-[calc(100vh-4rem)]">
+      <p class="text-xl font-bold">{posts.length}個の記事が見つかりました。</p>
+      <section class="mt-4">
+        <ul class="flex flex-wrap gap-8 justify-center">
+          {
+            posts.map((post) => (
+              <li class="">
+                <PostHeadingTile category="blog" post={post} />
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </div>
+  </ResponsiveWidth>
+</BaseLayout>
