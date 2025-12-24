@@ -6,7 +6,7 @@ import { SOCIAL_LINKS } from "@/libs/consts"
   {
     SOCIAL_LINKS.map(({href, ariaLabel, icon}) => (
       <ExternalLink href={href} ariaLabel={ariaLabel}>
-        <icon.src class="text-footer-text-color" />
+        <icon.src class="text-footer-text-color hover:text-black hover:dark:text-white" />
       </ExternalLink>
     ))
   }

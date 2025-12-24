@@ -30,7 +30,7 @@ const FooterNavContent = (props: FooterNavContentProps) => {
   const { name, href } = props;
 
   return (
-    <li className="hover:bg-hover px-4 py-2">
+    <li className="hover:bg-hover px-4 py-2 hover:text-black hover:dark:text-white">
       <a
         className="text-md"
         href={href}>
