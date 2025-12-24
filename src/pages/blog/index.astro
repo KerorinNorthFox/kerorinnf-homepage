@@ -5,7 +5,7 @@ import ResponsiveWidth from "@/layouts/ResponsiveWidth.astro";
 import { getCollection } from "astro:content";
 
 const posts = (await getCollection("blog"))
-  .sort((a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf());
+  .sort((a, b) => new Date(b.data.publishedDate).valueOf() - new Date(a.data.publishedDate).valueOf());
 ---
 
 <BaseLayout title="投稿一覧" description="ブログの投稿一覧">
