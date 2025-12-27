@@ -37,3 +37,7 @@
     --footer-bg-color: #2e3035;
   }
 }
+
+.hover-transition {
+  @apply hover:transition-colors hover:duration-150;
+}
