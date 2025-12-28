@@ -9,7 +9,7 @@ interface Props {
 
 const { post, category } = Astro.props;
 ---
-<div class="max-w-sm border rounded-lg border-gray-300 dark:border-gray-500 backdrop-blur-2xl bg-white/10 shadow-md hover:shadow-lg hover:-translate-y-1">
+<div class="max-w-sm border rounded-lg border-gray-300 dark:border-gray-500 bg-white/10 shadow-md hover:shadow-lg hover:-translate-y-1">
     <a href={`/${category}/${post.id}`}>
       {
         post.data.headingImage ? (
