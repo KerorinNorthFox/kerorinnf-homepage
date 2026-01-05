@@ -1,0 +1,31 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import ResponsiveWidth from "@/layouts/ResponsiveWidth.astro";
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("blog");
+
+const tags = posts.flatMap((post) => post.data.tags ?? []); // flatMapで1次元で配列を展開
+const uniqueTags = Array.from(new Set(tags)); // Set型で重複を削除
+---
+<BaseLayout title="タグ一覧" description="記事のタグ一覧ページ">
+  <ResponsiveWidth>
+    <div class="p-8 min-h-[calc(100vh-4rem)]">
+      <p class="text-xl font-bold inline-flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M856-390 570-104q-12 12-27 18t-30 6q-15 0-30-6t-27-18L103-457q-11-11-17-25.5T80-513v-287q0-33 23.5-56.5T160-880h287q16 0 31 6.5t26 17.5l352 353q12 12 17.5 27t5.5 30q0 15-5.5 29.5T856-390ZM513-160l286-286-353-354H160v286l353 354ZM260-640q25 0 42.5-17.5T320-700q0-25-17.5-42.5T260-760q-25 0-42.5 17.5T200-700q0 25 17.5 42.5T260-640Zm220 160Z"/></svg>
+        <span class="ml-2">タグ一覧</span>
+      </p>
+      <section class="mt-4">
+        <div class="flex">
+          <div class="flex flex-wrap gap-4">
+            {
+              uniqueTags.map((tag) => (
+                <a href={`/blog/tags/${tag}`} class="text-xs font-medium  px-4 py-2 rounded bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-300 dark:hover:bg-blue-700">{tag}</a>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+    </div>
+  </ResponsiveWidth>
+</BaseLayout>
