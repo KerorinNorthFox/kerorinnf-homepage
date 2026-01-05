@@ -2,8 +2,8 @@
 import FormattedDate from './FormattedDate.astro';
 
 interface Props {
-  publishedDate: Date;
-  updatedDate?: Date;
+  publishedDate: string | Date;
+  updatedDate?: string | Date;
 }
 
 const { publishedDate, updatedDate } = Astro.props;
