@@ -1,0 +1,20 @@
+---
+import type { MarkdownHeading } from 'astro'
+
+interface Props {
+  headings: MarkdownHeading[]
+}
+
+const { headings } = Astro.props;
+---
+<div class="sticky top-24 w-full p-4 border rounded-lg border-gray0300 dark:border-gray-500 bg-white/10 shadow-md">
+  <ul>
+    {
+      headings.map((head) => (
+        <li class={`ml-${(head.depth - 1)*2}`}>
+          <a href={`#${head.slug}`} class="text-wrap text-sm underline-offset-auto hover:underline">・{head.text}</a>
+        </li>
+      ))
+    }
+  </ul>
+</div>

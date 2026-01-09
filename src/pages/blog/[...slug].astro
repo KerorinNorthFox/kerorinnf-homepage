@@ -1,5 +1,8 @@
 ---
+import ContentHeading from "@/components/ContentHeading.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 import PostLayout from "@/layouts/PostLayout.astro";
+import ResponsiveWidth from "@/layouts/ResponsiveWidth.astro";
 import type { GetStaticPaths } from "astro";
 import type { CollectionEntry } from "astro:content";
 import { render } from "astro:content";
@@ -22,6 +25,11 @@ const post = Astro.props;
 const { Content, headings } = await render(post);
 const { title, description, publishedDate, updatedDate, tags, headingImage } = post.data;
 ---
-<PostLayout title={title} description={description} publishedDate={publishedDate} updatedDate={updatedDate} tags={tags} headingImage={headingImage}>
-  <Content />
-</PostLayout>
+<BaseLayout title={title} description={description}>
+  <ResponsiveWidth>
+    <PostLayout title={title} description={description} publishedDate={publishedDate} updatedDate={updatedDate} tags={tags} headingImage={headingImage}>
+      <ContentHeading slot="toc" headings={headings} />
+      <Content />
+    </PostLayout>
+  </ResponsiveWidth>
+</BaseLayout>
