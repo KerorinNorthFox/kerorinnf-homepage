@@ -6,15 +6,27 @@ interface Props {
 }
 
 const { headings } = Astro.props;
+const baseDepth = Math.min(...headings.map(h => h.depth));
 ---
 <div class="sticky top-24 w-full p-4 border rounded-lg border-gray0300 dark:border-gray-500 bg-white/10 shadow-md">
   <ul>
     {
-      headings.map((head) => (
-        <li class={`ml-${(head.depth - 1)*2}`}>
-          <a href={`#${head.slug}`} class="text-wrap text-sm underline-offset-auto hover:underline">・{head.text}</a>
+      headings.map((head) => {
+        const level = head.depth - baseDepth;
+
+        return (
+        <li class="relative pl-6 py-1 group" style={ `margin-left: ${level * 1.25}rem`}>
+          {level > 0 && (
+            <span class="absolute left-0 top-0 h-full group-last:h-1/2 w-px bg-gray-400/60"></span>
+            <span class="absolute left-0 top-1/2 w-4 h-px bg-gray-400/60"></span>
+          )}
+          {level === 0 &&(
+            <span class="absolute left-2 top-2 w-2 h-2 rounded-full bg-gray-600 dark:bg-gray-300"></span>
+          )}
+          <a href={`#${head.slug}`} class="block text-sm underline-offset-4 hover:underline">{head.text}</a>
         </li>
-      ))
+      )
+      })
     }
   </ul>
 </div>
