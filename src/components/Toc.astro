@@ -8,16 +8,18 @@ interface Props {
 const { headings } = Astro.props;
 const baseDepth = Math.min(...headings.map(h => h.depth));
 ---
-<div class="sticky top-24 w-full p-4 border rounded-lg border-gray0300 dark:border-gray-500 bg-white/10 shadow-md">
+<div class="sticky top-24 w-full p-4 border rounded-lg border-gray-300 dark:border-gray-500 bg-white/10">
   <ul>
     {
-      headings.map((head) => {
+      headings.map((head, i) => {
         const level = head.depth - baseDepth;
+        const isNextUnderLevel = headings[i + 1]?.depth === head.depth;
+        const verticalLineClass = isNextUnderLevel ? "h-full" : "h-1/2";
 
         return (
-        <li class="relative pl-6 py-1 group" style={ `margin-left: ${level * 1.25}rem`}>
+        <li class="relative pl-6 py-1" style={ `margin-left: ${level * 1.25}rem`}>
           {level > 0 && (
-            <span class="absolute left-0 top-0 h-full group-last:h-1/2 w-px bg-gray-400/60"></span>
+            <span class={`absolute left-0 top-0 w-px bg-gray-400/60 ${verticalLineClass}`}></span>
             <span class="absolute left-0 top-1/2 w-4 h-px bg-gray-400/60"></span>
           )}
           {level === 0 &&(

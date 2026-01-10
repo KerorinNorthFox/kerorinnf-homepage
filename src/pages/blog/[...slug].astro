@@ -1,5 +1,5 @@
 ---
-import ContentHeading from "@/components/ContentHeading.astro";
+import Toc from "@/components/Toc.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import PostLayout from "@/layouts/PostLayout.astro";
 import ResponsiveWidth from "@/layouts/ResponsiveWidth.astro";
@@ -28,7 +28,9 @@ const { title, description, publishedDate, updatedDate, tags, headingImage } = p
 <BaseLayout title={title} description={description}>
   <ResponsiveWidth>
     <PostLayout title={title} description={description} publishedDate={publishedDate} updatedDate={updatedDate} tags={tags} headingImage={headingImage}>
-      <ContentHeading slot="toc" headings={headings} />
+      {
+        headings.length !== 0 ?  <Toc slot="toc" headings={headings} /> : <div></div>
+      }
       <Content />
     </PostLayout>
   </ResponsiveWidth>
