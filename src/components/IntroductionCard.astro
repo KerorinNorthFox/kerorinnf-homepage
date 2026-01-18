@@ -1,4 +1,9 @@
 ---
+import icon from "@/assets/my_icon.jpg";
+import { SOCIAL_LINKS } from "@/libs/consts";
+
+const twitter = SOCIAL_LINKS[0];
+const github = SOCIAL_LINKS[1];
 ---
 <!-- <div class="rounded-lg bg-white/40 h-full w-full p-8 shadow-2xl">
   <div class="flex text-gray-900 items-center">
@@ -9,16 +14,19 @@
     </div>
   </div>
 </div> -->
-<div class="rounded-lg bg-white/40 border border-gray-200 dark:border-white/30 w-full p-8 shadow-xl text-gray-900">
-  <div class="flex">
-    <img src="" class="w-24 h-24 rounded-full bg-gray-200 animate-pulse" alt="profile icon" />
+<div class="rounded-lg bg-white/60 border border-gray-200 dark:border-white/30 w-full p-8 shadow-xl text-gray-900">
+  <div class="flex overflow-x-auto">
+    <img src={icon.src} class="w-28 h-28 rounded-full bg-gray-200" alt="profile icon" />
     <div class="ml-8">
       <div class="py-4">
-        <h1 class="text-2xl font-bold">ユーザー名</h1>
+        <h1 class="text-3xl font-bold">けろりん北狐</h1>
         <h2 class="text-xl text-gray-700">@kerorinnf</h2>
       </div>
-      <div>
+      <div class="text-lg font-light text-nowrap">
         <p>好きなもの：ケモ耳、尻尾</p>
+        <p>将来の夢：ケモ耳と一緒に暮らす</p>
+        <p>Twitter：<a href={twitter.href} target="_blank" class="text-blue-600 hover:underline">@KerorinNF222</a></p>
+        <p>GitHub：<a href={github.href} target="_blank" class="text-blue-600 hover:underline">@KerorinNorthFox</a></p>
       </div>
     </div>
   </div>
