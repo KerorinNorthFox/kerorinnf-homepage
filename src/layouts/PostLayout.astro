@@ -46,7 +46,7 @@ const { title, description, publishedDate, updatedDate, tags, headingImage} = As
       <slot name="toc" />
     </div>
     <div class="relative flex justify-between">
-      <div class="prose dark:prose-invert sm:prose-lg lg:prose-xl">
+      <div class="prose dark:prose-invert sm:prose-lg lg:prose-xl overflow-x-auto">
         <slot />
       </div>
       <aside class="hidden xl:block max-w-64">
