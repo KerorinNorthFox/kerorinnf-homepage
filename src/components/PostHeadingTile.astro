@@ -10,14 +10,14 @@ interface Props {
 const { post, category } = Astro.props;
 ---
 <a href={`/${category}/${post.id}`}>
-<div class="max-w-sm border rounded-lg border-gray-300 dark:border-gray-500 bg-white/10 shadow-md hover:shadow-lg hover:-translate-y-1">
-    {
-      post.data.headingImage ? (
-        <img class="rounded-t-lg object-cover" src={post.data.headingImage} />
-      ) : (
-        <div class="h-64"></div>
-      )
-    }
+  <div class="max-w-sm border rounded-lg border-gray-300 dark:border-gray-500 bg-white/10 shadow-md hover:shadow-lg hover:-translate-y-1 aspect-square">
+    <div class="h-64">
+      {
+        post.data.headingImage && (
+          <img class="rounded-t-lg object-cover object-top w-full h-full" src={post.data.headingImage} />
+        )
+      }
+    </div>
     <div class="pt-2 pb-4 px-8 overflow-hidden">
       <p class="text-right"><DateText publishedDate={post.data.publishedDate} updatedDate={post.data.updatedDate} /></p>
       <p class="text-wrap text-lg font-bold">{post.data.title}</p>
