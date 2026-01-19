@@ -11,7 +11,7 @@ const { post, category } = Astro.props;
 ---
 <a href={`/${category}/${post.id}`}>
   <div class="max-w-sm border rounded-lg border-gray-300 dark:border-gray-500 bg-white/10 shadow-md hover:shadow-lg hover:-translate-y-1 aspect-square">
-    <div class="h-64">
+    <div class="h-48 lg:h-64">
       {
         post.data.headingImage && (
           <img class="rounded-t-lg object-cover object-top w-full h-full" src={post.data.headingImage} />

@@ -1,9 +1,17 @@
 ---
+import Button from "@/components/Button.astro";
 import IntroductionCard from "@/components/IntroductionCard.astro";
+import PostHeadingTile from "@/components/PostHeadingTile.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import ResponsiveWidth from "@/layouts/ResponsiveWidth.astro";
 import { SITE_DESCRIPTION } from "@/libs/consts";
+import { getCollection } from "astro:content";
 
 const keywords = ["KerorinNF", "kerorinnf", "KerorinNorthFox", "blog", "けろりん", "けろりん北狐"];
+
+const latestPosts = (await getCollection("blog"))
+	.sort((a, b) => new Date(b.data.publishedDate).valueOf() - new Date(a.data.publishedDate).valueOf())
+	.slice(0, 10);
 ---
 
 <BaseLayout title="ホームページ" description={SITE_DESCRIPTION} keywords={keywords}>
@@ -18,9 +26,38 @@ const keywords = ["KerorinNF", "kerorinnf", "KerorinNorthFox", "blog", "けろ�
 				</div>
 			</div>
 			<div class="flex-1 max-w-lg w-full">
-				<h1 class="text-3xl text-center mb-4">管理者</h1>
+				<h2 class="text-3xl text-center mb-4">管理者</h2>
 				<IntroductionCard />
 			</div>
 		</div>
 	</div>
+	<ResponsiveWidth>
+		<div class="py-16 px-4">
+			<h2 class="my-8 text-4xl text-center flex gap-8 items-center justify-center">
+				<span class="w-12 h-1 bg-text-color rounded-full"></span>
+				Latest Blog
+				<span class="w-12 h-1 bg-text-color rounded-full"></span>
+			</h2>
+			<div class="relative">
+				<div class="absolute inset left-0 w-18 h-full bg-linear-to-r from-bg-color to-transparent z-10"></div>
+				<div class="absolute inset left-0 w-18 h-full bg-linear-to-r dark:from-blue-600/8 to-transparent z-10"></div>
+				<div class="absolute inset right-0 w-18 h-full bg-linear-to-r to-bg-color from-transparent z-10"></div>
+				<div class="absolute inset right-0 w-18 h-full bg-linear-to-r dark:to-violet-600/5 from-transparent z-10"></div>
+				<div class="flex gap-8 overflow-x-auto py-4 px-12">
+					{
+						latestPosts.map((post) => (
+							<div class="min-w-xs lg:min-w-sm">
+								<PostHeadingTile category="blog" post={post} />
+							</div>
+						))
+					}
+				</div>
+			</div>
+			<div class="flex justify-center my-4">
+				<Button href="/blog">
+					<span class="text-semibold">記事一覧→</span>
+				</Button>
+			</div>
+		</div>
+	</ResponsiveWidth>
 </BaseLayout>
